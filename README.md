@@ -20,6 +20,12 @@ TutorIA es un agente conversacional inteligente diseñado para acompañar a estu
 - 🔁 Persistencia de contexto entre sesiones
 - 📐 Asignaturas iniciales: Programación I (Python) e Introducción a la Matemática
 
+## Arquitectura del sistema
+![Arquitectura TutorIA](docs/tutoria_architecture.svg)
+
+📄 [Documento de requerimientos](docs/TutorIA_Requerimientos.pdf)
+
+
 ### Tecnologías
 
 | Capa | Tecnología |
@@ -48,8 +54,8 @@ tutoria/
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/Sof1SP/tutoria.git
-cd tutoria
+git clone https://github.com/Sof1SP/tutorIA.git
+cd tutorIA
 
 # 2. Copiar variables de entorno
 cp .env.example .env
@@ -66,7 +72,7 @@ docker-compose up --build
 | Dr. José Jaramillo Villegas | Director del Grupo de Investigación Sirius — dirección científica y técnica del proyecto |
 | Dra. Luz Elena Grajales López | Dirección pedagógica — diseño del marco educativo, materiales y capacitación docente |
 | Sofía Soto Parra | Joven investigadora — desarrollo de software, gestión del repositorio y calidad |
-| Santiago (Santi) | Infraestructura cloud (Azure) |
+| Santiago  | Infraestructura cloud (Azure) |
 
 **Institución:** Universidad Tecnológica de Pereira  
 **Grupo de investigación:** Sirius  
@@ -91,6 +97,11 @@ TutorIA is an intelligent conversational agent designed to support higher educat
 - 📊 Statistics dashboard for teachers
 - 🔁 Session context persistence
 - 📐 Initial subjects: Programming I (Python) and Introduction to Mathematics
+
+## System architecture
+![TutorIA Architecture](docs/tutoria_architecture.svg)
+
+📄 [Requirements document](docs/TutorIA_Requerimientos.pdf)
 
 ### Tech Stack
 
@@ -120,8 +131,8 @@ tutoria/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Sof1SP/tutoria.git
-cd tutoria
+git clone https://github.com/Sof1SP/tutorIA.git
+cd tutorIA
 
 # 2. Copy environment variables
 cp .env.example .env
@@ -138,7 +149,7 @@ docker-compose up --build
 | Dr. José Jaramillo Villegas | Director of the Sirius Research Group — scientific and technical leadership |
 | Dr. Luz Elena Grajales López | Pedagogical direction — educational framework design, materials and teacher training |
 | Sofía Soto Parra | Junior researcher — software development, repository management and quality assurance |
-| Santiago (Santi) | Cloud infrastructure (Azure) |
+| Santiago  | Cloud infrastructure (Azure) |
 
 **Institution:** Universidad Tecnológica de Pereira  
 **Research group:** Sirius  
