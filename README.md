@@ -9,7 +9,7 @@
 
 ### ¿Qué es TutorIA?
 
-TutorIA es un agente conversacional inteligente diseñado para acompañar a estudiantes de educación superior en zonas rurales del departamento de Risaralda, Colombia. Integrado dentro de la plataforma **Open edX**, utiliza la API de **Claude (Anthropic)** como motor de lenguaje para ofrecer tutoría personalizada, retroalimentación adaptativa y evaluaciones dinámicas.
+TutorIA es un agente conversacional inteligente diseñado para acompañar a estudiantes de educación superior en zonas rurales del departamento de Risaralda, Colombia. Integrado dentro de la plataforma **Open edX**, utiliza **Ollama** con modelos open-source (Llama 3.2 / Mistral) como motor de lenguaje para ofrecer tutoría personalizada, retroalimentación adaptativa y evaluaciones dinámicas.
 
 ### Características principales
 
@@ -30,9 +30,12 @@ TutorIA es un agente conversacional inteligente diseñado para acompañar a estu
 
 | Capa | Tecnología |
 |------|-----------|
-| Backend | Python · FastAPI · Anthropic Claude API |
-| Frontend | React |
-| LMS | Open edX (XBlock / Plugin) |
+| Backend | Python · FastAPI |
+| LLM | Ollama (Llama 3.2 / Mistral) · API compatible con OpenAI |
+| RAG | ChromaDB (vector store) |
+| Frontend | Integrado en Open edX (plugin openedx-ai-extensions / XBlock) |
+| Base de datos | SQLite (dev) · PostgreSQL (producción) |
+| LMS | Open edX |
 | Infraestructura | Docker · Microsoft Azure |
 | CI/CD | GitHub Actions |
 
@@ -40,9 +43,8 @@ TutorIA es un agente conversacional inteligente diseñado para acompañar a estu
 
 ```
 tutoria/
-├── backend/        # API y lógica del agente
-├── frontend/       # Interfaz web y móvil
-├── openedx/        # Plugin/XBlock para Open edX
+├── backend/        # API FastAPI y lógica del agente
+├── openedx/        # Plugin/XBlock para Open edX (incluye UI del estudiante)
 ├── infra/          # Docker, Azure, variables de entorno
 ├── data/           # Corpus pedagógico (texto plano)
 ├── tests/          # Pruebas unitarias y de integración
@@ -59,7 +61,7 @@ cd tutorIA
 
 # 2. Copiar variables de entorno
 cp .env.example .env
-# Edita .env con tu API key de Anthropic y configuración de Azure
+# Edita .env con la configuración de Ollama y base de datos
 
 # 3. Levantar el entorno con Docker
 docker-compose up --build
@@ -87,7 +89,7 @@ Este proyecto es de código abierto bajo la licencia [MIT](LICENSE).
 
 ### What is TutorIA?
 
-TutorIA is an intelligent conversational agent designed to support higher education students in rural areas of the Risaralda department, Colombia. Integrated within the **Open edX** platform, it uses the **Claude (Anthropic)** API as its language engine to deliver personalized tutoring, adaptive feedback, and dynamic assessments.
+TutorIA is an intelligent conversational agent designed to support higher education students in rural areas of the Risaralda department, Colombia. Integrated within the **Open edX** platform, it uses **Ollama** with open-source models (Llama 3.2 / Mistral) as its language engine to deliver personalized tutoring, adaptive feedback, and dynamic assessments.
 
 ### Key Features
 
@@ -107,9 +109,12 @@ TutorIA is an intelligent conversational agent designed to support higher educat
 
 | Layer | Technology |
 |-------|-----------|
-| Backend | Python · FastAPI · Anthropic Claude API |
-| Frontend | React |
-| LMS | Open edX (XBlock / Plugin) |
+| Backend | Python · FastAPI |
+| LLM | Ollama (Llama 3.2 / Mistral) · OpenAI-compatible API |
+| RAG | ChromaDB (vector store) |
+| Frontend | Integrated in Open edX (openedx-ai-extensions plugin / XBlock) |
+| Database | SQLite (dev) · PostgreSQL (production) |
+| LMS | Open edX |
 | Infrastructure | Docker · Microsoft Azure |
 | CI/CD | GitHub Actions |
 
@@ -117,9 +122,8 @@ TutorIA is an intelligent conversational agent designed to support higher educat
 
 ```
 tutoria/
-├── backend/        # Agent logic and API
-├── frontend/       # Web and mobile UI
-├── openedx/        # Open edX XBlock / Plugin
+├── backend/        # FastAPI agent logic and API
+├── openedx/        # Open edX XBlock / Plugin (includes student UI)
 ├── infra/          # Docker, Azure, environment config
 ├── data/           # Pedagogical corpus (plain text)
 ├── tests/          # Unit and integration tests
@@ -136,7 +140,7 @@ cd tutorIA
 
 # 2. Copy environment variables
 cp .env.example .env
-# Edit .env with your Anthropic API key and Azure config
+# Edit .env with your Ollama and database configuration
 
 # 3. Start the environment with Docker
 docker-compose up --build
